@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops-q1
+  name: q1dockerapp-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: devops-q1
+      app: q1dockerapp
   template:
     metadata:
       labels:
-        app: devops-q1
+        app: q1dockerapp
     spec:
       containers:
-      - name: devops-q1
-        image: yourdockerhub/devops-q1:latest
-        ports:
-        - containerPort: 80
+        - name: q1dockerapp
+          image: shobitha22/q1dockerapp:latest
+          ports:
+            - containerPort: 80
